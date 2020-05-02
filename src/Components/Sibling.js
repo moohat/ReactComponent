@@ -12,6 +12,7 @@ export class Sibling extends React.Component {
                 {/* jika menggunakan child props */}
                 {/* <h1>Hey, My name is {name} {age}</h1> */}
                 <h1>Hey, My name is {name} and my age is {age}</h1>
+               
             </div>
         );
     }

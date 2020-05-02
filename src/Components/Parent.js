@@ -8,7 +8,9 @@ export class Parent extends Component {
         super(props);
         this.state = {
             name: 'Ubay',
-            age : 0
+            age : 0,
+            bgColor : '#a55eea',
+            colorText: '#26de81'
         };
 
         //bind changeName
@@ -16,17 +18,17 @@ export class Parent extends Component {
     }
 
 
-    changeName(newName, newAge) {
+    changeName(newName, newAge, newBgColor, newColorText) {
         console.log('ini jalan parent');       
 
-        this.setState({name: newName, age: newAge})
+        this.setState({name: newName, age: newAge, bgColor:newBgColor, colorText: newColorText})
     }
 
 
     render(){
         return(
-            <div>
-                <Child onChange={this.changeName}/>
+        <div style={{background:this.state.bgColor, color:this.state.colorText, width:350, marginLeft: 150, marginTop: 150}}>
+                <Child changeElement={this.changeName}/>
                 {/* <Sibling name={this.state.name} >and my age is : {this.state.age}</Sibling> */}
                 <Sibling name={this.state.name} age ={this.state.age}/>
 
